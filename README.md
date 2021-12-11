@@ -1,0 +1,1 @@
+# inno_setup_example
