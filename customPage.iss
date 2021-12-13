@@ -1,4 +1,5 @@
 #include "checkDotNet.iss";
+#include "checkCrystalReport.iss";
 [Code]
 var
   Page: TWizardPage;
@@ -18,8 +19,8 @@ begin
     CheckListBox.BorderStyle := bsNone; 
 
     // AddCheckBox(ACaption, ASubItem, ALevel, AChecked, AEnabled, AHasInternalChildren, ACheckWhenParentChecked, AObject)
-     CheckListBox.AddCheckBox('Microsoft .NET Framework 4 Full', '', 0, IsDotNetInstalled(), not IsDotNetInstalled, False, False, nil); // unchecked
-     CheckListBox.AddCheckBox('requirement 2', '', 0, True, True, False, False, nil); // checked
+     CheckListBox.AddCheckBox('Microsoft .NET Framework 4 Full', '', 0, not IsDotNetInstalled(), not IsDotNetInstalled, False, False, nil); // unchecked
+     CheckListBox.AddCheckBox('Crystal Report Runtime', '', 0, not IsCrystalReportInstalled(), not IsCrystalReportInstalled(), False, False, nil); // checked
      CheckListBox.AddCheckBox('requirement 3', '', 0, False, False, False, False, nil); // disabled
 
 end;
