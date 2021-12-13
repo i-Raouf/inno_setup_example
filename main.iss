@@ -2,7 +2,9 @@
 #define MyAppVersion "1.5"
 #define MyAppPublisher "My Company, Inc."
 #define MyAppURL "https://www.example.com/"
-#define MyAppExeName "hello_world.exe"
+#define MyAppExeName "dummy_app.txt"
+
+#include "customPage.iss";
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
