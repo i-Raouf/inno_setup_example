@@ -1,3 +1,4 @@
+#include "checkDotNet.iss";
 [Code]
 var
   Page: TWizardPage;
@@ -17,7 +18,7 @@ begin
     CheckListBox.BorderStyle := bsNone; 
 
     // AddCheckBox(ACaption, ASubItem, ALevel, AChecked, AEnabled, AHasInternalChildren, ACheckWhenParentChecked, AObject)
-     CheckListBox.AddCheckBox('requirement 1', '', 0, False, True, False, False, nil); // unchecked
+     CheckListBox.AddCheckBox('Microsoft .NET Framework 4 Full', '', 0, IsDotNetInstalled(), not IsDotNetInstalled, False, False, nil); // unchecked
      CheckListBox.AddCheckBox('requirement 2', '', 0, True, True, False, False, nil); // checked
      CheckListBox.AddCheckBox('requirement 3', '', 0, False, False, False, False, nil); // disabled
 
