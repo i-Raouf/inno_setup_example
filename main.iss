@@ -27,7 +27,7 @@ OutputDir=.
 OutputBaseFilename=setup
 Compression=lzma
 SolidCompression=yes
-WizardStyle=modern
+;WizardStyle=modern
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
