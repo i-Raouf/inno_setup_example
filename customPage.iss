@@ -2,6 +2,13 @@
 #include "checkCrystalReport.iss";
 #include "checkSqlServer.iss";
 [Code]
+var
+  Page: TWizardPage;
+  CheckListBox: TNewCheckListBox;
+  OutputProgressWizardPage: TOutputProgressWizardPage;
+  OutputProgressWizardPageAfterID: Integer;
+
+
 function CreateRequirementsPage(PreviousPageId: Integer): Integer;
 var
     Page: TWizardPage;
@@ -28,13 +35,35 @@ begin
     Result := Page.ID;
 end;
 
-var
-  Page: TWizardPage;
-  CheckListBox: TNewCheckListBox;
-
 
 procedure InitializeWizard();
 begin
   // create page after welcome page
-  CreateRequirementsPage(wpWelcome)
+  OutputProgressWizardPageAfterID := CreateRequirementsPage(wpWelcome)
+
+  OutputProgressWizardPage := CreateOutputProgressPage('Installing dependencies', 'Installing softwares needed to run this program');
+end;
+
+
+function NextButtonClick(CurPageID: Integer): Boolean;
+var
+  Position, Max: Integer;
+begin
+  if CurPageID = OutputProgressWizardPageAfterID then begin
+    try
+        OutputProgressWizardPage.Show
+        OutputProgressWizardPage.SetProgress(1, 3);
+        OutputProgressWizardPage.SetText('Installing...','Microsoft .NET Framework 4 Full');
+        Sleep(3000)
+        OutputProgressWizardPage.SetProgress(2, 3);
+        OutputProgressWizardPage.SetText('Installing...','Crystal Report Runtime');
+        Sleep(3000)
+        OutputProgressWizardPage.SetProgress(3, 3);
+        OutputProgressWizardPage.SetText('Installing...','Microsoft SQL Server 2008 R2 - Express Edition');
+        Sleep(3000)
+    finally
+      OutputProgressWizardPage.Hide;
+    end;
+  end;
+  Result := True;
 end;
