@@ -54,7 +54,8 @@ begin
         OutputProgressWizardPage.Show
         OutputProgressWizardPage.SetProgress(1, 3);
         OutputProgressWizardPage.SetText('Installing...','Microsoft .NET Framework 4 Full');
-        Sleep(3000)
+        if not IsDotNetInstalled() then
+          InstallDotNet();
         OutputProgressWizardPage.SetProgress(2, 3);
         OutputProgressWizardPage.SetText('Installing...','Crystal Report Runtime');
         Sleep(3000)
