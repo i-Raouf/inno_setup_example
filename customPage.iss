@@ -58,7 +58,8 @@ begin
           InstallDotNet();
         OutputProgressWizardPage.SetProgress(2, 3);
         OutputProgressWizardPage.SetText('Installing...','Crystal Report Runtime');
-        Sleep(3000)
+        if not IsCrystalReportInstalled() then
+          InstallcrystalReport
         OutputProgressWizardPage.SetProgress(3, 3);
         OutputProgressWizardPage.SetText('Installing...','Microsoft SQL Server 2008 R2 - Express Edition');
         Sleep(3000)
