@@ -52,17 +52,19 @@ begin
   if CurPageID = OutputProgressWizardPageAfterID then begin
     try
         OutputProgressWizardPage.Show
-        OutputProgressWizardPage.SetProgress(1, 3);
+        OutputProgressWizardPage.SetProgress(0, 3);
         OutputProgressWizardPage.SetText('Installing...','Microsoft .NET Framework 4 Full');
         if not IsDotNetInstalled() then
           InstallDotNet();
-        OutputProgressWizardPage.SetProgress(2, 3);
+        OutputProgressWizardPage.SetProgress(1, 3);
         OutputProgressWizardPage.SetText('Installing...','Crystal Report Runtime');
         if not IsCrystalReportInstalled() then
-          InstallcrystalReport
-        OutputProgressWizardPage.SetProgress(3, 3);
+          InstallcrystalReport();
+        OutputProgressWizardPage.SetProgress(2, 3);
         OutputProgressWizardPage.SetText('Installing...','Microsoft SQL Server 2008 R2 - Express Edition');
-        Sleep(3000)
+        if not IsSqlServerInstalled() then
+          InstallSqlServer();
+        OutputProgressWizardPage.SetProgress(3, 3);
     finally
       OutputProgressWizardPage.Hide;
     end;
