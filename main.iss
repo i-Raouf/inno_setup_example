@@ -3,6 +3,7 @@
 #define MyAppPublisher "My Company, Inc."
 #define MyAppURL "https://www.example.com/"
 #define MyAppExeName "dummy_app.txt"
+#define ServerInstance "sse2008r2"
 
 #include "customPage.iss";
 
@@ -23,8 +24,8 @@ DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=commandline
-OutputDir=.
-OutputBaseFilename=setup
+OutputDir=Dist
+OutputBaseFilename=Setup
 Compression=lzma
 SolidCompression=yes
 ;WizardStyle=modern
@@ -36,8 +37,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "dummy app\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "dummy app\*"; DestDir: "{app}"; Flags: ignoreversion
+Source: "App\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "App\*"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

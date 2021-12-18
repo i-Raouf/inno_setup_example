@@ -5,7 +5,7 @@ var
     Version: String;
     PackedVersion: Int64;
 begin
-    RegQueryStringValue(HKLM, 'SOFTWARE\Microsoft\Microsoft SQL Server\SSE2008R2\MSSQLServer\CurrentVersion', 'CurrentVersion', version);
+    RegQueryStringValue(HKLM, ExpandConstant('SOFTWARE\Microsoft\Microsoft SQL Server\{#ServerInstance}\MSSQLServer\CurrentVersion'), 'CurrentVersion', version);
     if (version < '10.5') (*or (version > '9.00') or (version = '') *) then
         sqlserverInstalled := false
     else
@@ -21,11 +21,11 @@ begin
   Params := '/ACTION="Install" ' +
             '/Q ' +
             '/FEATURES=SQL ' +
-            '/INSTANCENAME="SSE2008R2" ' +
+            ExpandConstant('/INSTANCENAME="{#ServerInstance}" ') +
             '/HIDECONSOLE ' +
             '/IACCEPTSQLSERVERLICENSETERMS ';
 
-  if not ShellExec('', ExpandConstant('{src}\dependencies\SQLEXPR_x86_ENU.exe'),
+  if not ShellExec('', ExpandConstant('{src}\Bin\SQLEXPR_x86_ENU.exe'),
      Params, '', SW_SHOW, ewWaitUntilTerminated, ResultCode) then
   begin
     MsgBox('Microsoft SQL Server 2008 R2 - Express Edition installation failed with code: ' + IntToStr(ResultCode) + '.',

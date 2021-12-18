@@ -12,7 +12,7 @@ procedure InstallDotNet;
 var
   ResultCode: Integer;
 begin
-  if not Exec('dependencies\\dotNetFx40_Full_x86_x64.exe', '/q /norestart', '', SW_SHOW,
+  if not Exec('Bin\\dotNetFx40_Full_x86_x64.exe', '/q /norestart', '', SW_SHOW,
      ewWaitUntilTerminated, ResultCode) then
   begin
     MsgBox('.NET installation failed with code: ' + IntToStr(ResultCode) + '.',
