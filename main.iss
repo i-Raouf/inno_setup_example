@@ -36,6 +36,9 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
+[Dirs]
+Name: "{userdocs}\DataFiles"; Permissions: users-modify
+
 [Files]
 Source: "Data\*"; DestDir: "{userdocs}\DataFiles"; Permissions: everyone-full; Flags: onlyifdoesntexist uninsneveruninstall
 Source: "App\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
