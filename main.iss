@@ -37,6 +37,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
+Source: "Data\*"; DestDir: "{userdocs}\DataFiles"; Permissions: everyone-full; Flags: onlyifdoesntexist uninsneveruninstall
 Source: "App\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "App\*"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
