@@ -43,3 +43,11 @@ begin
     MsgBox(GetExceptionMessage, mbError, MB_OK);
   end;
 end;
+
+procedure CurStepChanged(CurStep: TSetupStep);
+begin
+  if CurStep = ssPostInstall then
+  begin
+    ConnectToSqlServer();
+  end;
+end;
