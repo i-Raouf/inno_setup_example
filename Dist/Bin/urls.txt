@@ -1,0 +1,11 @@
+Microsoft .NET Framework 4 Full
+
+https://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe
+
+Crystal Report Runtime
+
+https://origin.softwaredownloads.sap.com/public/file/0020000000665022019
+
+Microsoft SQL Server 2008 R2 - Express Edition
+
+https://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLEXPR_x86_ENU.exe
