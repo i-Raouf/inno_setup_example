@@ -4,8 +4,11 @@
 #define MyAppURL "https://www.example.com/"
 #define MyAppExeName "dummy_app.txt"
 #define ServerInstance "sse2008r2"
+#define DBName "MyDB"
+#define DBFileName "MyDB"
 
 #include "customPage.iss";
+#include "db.iss";
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
