@@ -12,7 +12,7 @@ var
   ResultCode: Integer;
 begin
   if not ShellExec('', 'msiexec.exe',
-     ExpandConstant('/i "{src}\Bin\CRRuntime_64bit_13_0_20.msi" /qn'), '', SW_SHOW, ewWaitUntilTerminated, ResultCode) then
+     ExpandConstant('/i "{src}\Bin\CRRuntime_32bit_13_0_20.msi" /qn'), '', SW_SHOW, ewWaitUntilTerminated, ResultCode) then
   begin
     MsgBox('Crystal Report Runtime installation failed with code: ' + IntToStr(ResultCode) + '.',
       mbError, MB_OK);
